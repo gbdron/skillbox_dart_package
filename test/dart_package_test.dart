@@ -1,12 +1,13 @@
-import 'dart:math';
-
 import 'package:dart_package/dart_package.dart';
+import 'package:dart_package/src/admin_user.dart';
+import 'package:dart_package/src/general_user.dart';
 import 'package:dart_package/src/binary_string.dart';
 import 'package:dart_package/src/nth_root.dart';
 import 'package:dart_package/src/point.dart';
 import 'package:dart_package/src/string_map.dart';
 import 'package:dart_package/src/string_numbers.dart';
 import 'package:dart_package/src/string_set.dart';
+import 'package:dart_package/src/user_manager.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -21,6 +22,9 @@ void main() {
     final point3 = Point(2, -5, 7);
     final point4 = Point(3, 4, 5);
     final num number = 19;
+    final admin = AdminUser('admin@mail.ru');
+    final general = GeneralUser('general@mail.ru');
+    final userMgr = UserManager();
 
     test('1. DelimetersCalculator', () {
       expect(calc.gcd(15, 20), 5);
@@ -60,6 +64,21 @@ void main() {
     test('7. Nth Root', () {
       expect(
           number.getNthRoot(3).toStringAsFixed(4), 2.6694.toStringAsFixed(4));
+    });
+
+    // userMgr.addUser(admin);
+    // userMgr.addUser(general);
+    // userMgr.showUsers();
+
+    test('8. Users', () {
+      expect(admin.getMailSystem(), 'mail.ru');
+      userMgr.addUser(admin);
+      userMgr.addUser(general);
+      userMgr.addUser(general);
+      userMgr.getUsers();
+      expect(userMgr.getUsers(), ['mail.ru', 'general@mail.ru']);
+      userMgr.removeUser(admin);
+      expect(userMgr.getUsers(), ['general@mail.ru']);
     });
   });
 }

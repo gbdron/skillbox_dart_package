@@ -1,10 +1,13 @@
 import 'package:dart_package/dart_package.dart';
+import 'package:dart_package/src/admin_user.dart';
 import 'package:dart_package/src/binary_string.dart';
+import 'package:dart_package/src/general_user.dart';
 import 'package:dart_package/src/nth_root.dart';
 import 'package:dart_package/src/point.dart';
 import 'package:dart_package/src/string_map.dart';
 import 'package:dart_package/src/string_numbers.dart';
 import 'package:dart_package/src/string_set.dart';
+import 'package:dart_package/src/user_manager.dart';
 
 void main() {
   var calc = DelimetersCalculator();
@@ -33,4 +36,14 @@ void main() {
 
   num number = 19;
   print(number.getNthRoot(3).toStringAsFixed(4));
+
+  var admin = AdminUser('admin@mail.ru');
+  var general = GeneralUser('general@mail.ru');
+  var userMgr = UserManager();
+  print(admin.getMailSystem());
+  userMgr.addUser(admin);
+  userMgr.addUser(general);
+  print(userMgr.getUsers());
+  userMgr.removeUser(admin);
+  print(userMgr.getUsers());
 }
