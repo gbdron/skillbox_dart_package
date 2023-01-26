@@ -1,5 +1,6 @@
 import 'package:dart_package/dart_package.dart';
 import 'package:dart_package/src/binary_string.dart';
+import 'package:dart_package/src/point.dart';
 import 'package:dart_package/src/string_map.dart';
 import 'package:dart_package/src/string_numbers.dart';
 import 'package:dart_package/src/string_set.dart';
@@ -21,4 +22,11 @@ void main() {
   var strSet = StringSet();
   print(strSet
       .strToSet(['one', 'cat', 'dog', 'one', 'two', 'three', 'zero', 'zero']));
+
+  var point1 = Point.getInitialPoint();
+  var point2 = Point.getUnitVector();
+  var point3 = Point(2, -5, 7);
+  var point4 = Point(3, 4, 5);
+  print(point1.distanceTo(point2).toStringAsFixed(4));
+  print(point3.distanceTo(point4).toStringAsFixed(4));
 }
