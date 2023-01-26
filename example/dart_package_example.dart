@@ -2,6 +2,7 @@ import 'package:dart_package/dart_package.dart';
 import 'package:dart_package/src/binary_string.dart';
 import 'package:dart_package/src/string_map.dart';
 import 'package:dart_package/src/string_numbers.dart';
+import 'package:dart_package/src/string_set.dart';
 
 void main() {
   var calc = DelimetersCalculator();
@@ -16,4 +17,8 @@ void main() {
 
   var strMap = StringMap();
   print(strMap.strToMap('aa  b  c aa b c aa b c d'));
+
+  var strSet = StringSet();
+  print(strSet
+      .strToSet(['one', 'cat', 'dog', 'one', 'two', 'three', 'zero', 'zero']));
 }
