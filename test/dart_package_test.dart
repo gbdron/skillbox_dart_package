@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:dart_package/dart_package.dart';
 import 'package:dart_package/src/binary_string.dart';
+import 'package:dart_package/src/nth_root.dart';
 import 'package:dart_package/src/point.dart';
 import 'package:dart_package/src/string_map.dart';
 import 'package:dart_package/src/string_numbers.dart';
@@ -19,6 +20,7 @@ void main() {
     final point2 = Point.getUnitVector();
     final point3 = Point(2, -5, 7);
     final point4 = Point(3, 4, 5);
+    final num number = 19;
 
     test('1. DelimetersCalculator', () {
       expect(calc.gcd(15, 20), 5);
@@ -53,6 +55,11 @@ void main() {
           1.7321.toStringAsFixed(4));
       expect(point3.distanceTo(point4).toStringAsFixed(4),
           9.2736.toStringAsFixed(4));
+    });
+
+    test('7. Nth Root', () {
+      expect(
+          number.getNthRoot(3).toStringAsFixed(4), 2.6694.toStringAsFixed(4));
     });
   });
 }

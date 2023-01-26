@@ -1,5 +1,6 @@
 import 'package:dart_package/dart_package.dart';
 import 'package:dart_package/src/binary_string.dart';
+import 'package:dart_package/src/nth_root.dart';
 import 'package:dart_package/src/point.dart';
 import 'package:dart_package/src/string_map.dart';
 import 'package:dart_package/src/string_numbers.dart';
@@ -29,4 +30,7 @@ void main() {
   var point4 = Point(3, 4, 5);
   print(point1.distanceTo(point2).toStringAsFixed(4));
   print(point3.distanceTo(point4).toStringAsFixed(4));
+
+  num number = 19;
+  print(number.getNthRoot(3).toStringAsFixed(4));
 }
