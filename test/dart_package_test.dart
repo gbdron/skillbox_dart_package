@@ -66,10 +66,6 @@ void main() {
           number.getNthRoot(3).toStringAsFixed(4), 2.6694.toStringAsFixed(4));
     });
 
-    // userMgr.addUser(admin);
-    // userMgr.addUser(general);
-    // userMgr.showUsers();
-
     test('8. Users', () {
       expect(admin.getMailSystem(), 'mail.ru');
       userMgr.addUser(admin);
