@@ -15,7 +15,9 @@ void main() {
 
   var bin = BinaryString();
   print(bin.intToBinary(3435532));
-  print(bin.intToBinary(-1));
+  print(bin.intToBinary(-3435532));
+  print(bin.intToBinary(4));
+  print(bin.intToBinary(-4));
   print(bin.binaryToInt('1111111110010111001001111110100'));
   print(bin.binaryToInt('00000000011010001101100000011000'));
 

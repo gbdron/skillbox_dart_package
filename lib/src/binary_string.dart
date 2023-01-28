@@ -20,7 +20,8 @@ class BinaryString {
       binary = "0" + binary;
     }
 
-    return binary;
+    //remove leading zeros
+    return binary.replaceAll(RegExp(r'^0+(?=.)'), '');
   }
 
   int binaryToInt(String binary) {

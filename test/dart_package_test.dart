@@ -22,8 +22,14 @@ void main() {
 
     test('2. Binary String', () {
       final bin = BinaryString();
-      expect(3435532 == bin.binaryToInt(bin.intToBinary(3435532)), true);
-      expect(-3435532 == bin.binaryToInt(bin.intToBinary(-3435532)), true);
+      expect(bin.intToBinary(3435532), '1101000110110000001100');
+      expect(bin.binaryToInt('1101000110110000001100'), 3435532);
+      expect(bin.intToBinary(-3435532), '11111111110010111001001111110100');
+      expect(bin.binaryToInt('11111111110010111001001111110100'), -3435532);
+      expect(bin.intToBinary(4), '100');
+      expect(bin.binaryToInt('100'), 4);
+      expect(bin.intToBinary(-4), '11111111111111111111111111111100');
+      expect(bin.binaryToInt('11111111111111111111111111111100'), -4);
     });
 
     test('3. String Numbers', () {
