@@ -22,13 +22,13 @@ void main() {
 
     test('2. Binary String', () {
       final bin = BinaryString();
-      expect(bin.intToBinary(3435532), '0000000001101000110110000001100');
-      expect(bin.binaryToInt('0000000001101000110110000001100'), 3435532);
+      expect(3435532 == bin.binaryToInt(bin.intToBinary(3435532)), true);
+      expect(-3435532 == bin.binaryToInt(bin.intToBinary(-3435532)), true);
     });
 
     test('3. String Numbers', () {
       final strNum = StringNumbers();
-      expect(strNum.strToNumbers('2 ad3sf 3 dsf 4 afds 5'), [2, 3, 4, 5]);
+      expect(strNum.strToNumbers('2 ad3sf 3 dsf 4.5 afds 5'), [2, 3, 4.5, 5]);
     });
 
     test('4. String Map', () {

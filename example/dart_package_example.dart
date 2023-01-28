@@ -15,7 +15,12 @@ void main() {
 
   var bin = BinaryString();
   print(bin.intToBinary(3435532));
-  print(bin.binaryToInt('0000000001101000110110000001100'));
+  print(bin.intToBinary(-1));
+  print(bin.binaryToInt('1111111110010111001001111110100'));
+  print(bin.binaryToInt('00000000011010001101100000011000'));
+
+  print(3435532 == bin.binaryToInt(bin.intToBinary(3435532)));
+  print(-3435532 == bin.binaryToInt(bin.intToBinary(-3435532)));
 
   var strNum = StringNumbers();
   print(strNum.strToNumbers('2 ad3sf  3 dsf 4 afds 5'));

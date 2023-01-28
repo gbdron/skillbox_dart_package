@@ -1,10 +1,10 @@
 class StringNumbers {
-  List<int> strToNumbers(String str) {
-    List<int> result = [];
+  List<num> strToNumbers(String str) {
+    List<num> result = [];
 
     str.split(' ').forEach((element) {
-      if (int.tryParse(element) != null) {
-        result.add(int.parse(element));
+      if (num.tryParse(element) != null) {
+        result.add(num.parse(element));
       }
     });
     return result;
